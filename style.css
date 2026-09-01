@@ -310,3 +310,8 @@ section { padding-block: 116px; border-top: 1px solid var(--border); scroll-marg
   .project-card__body, .contact__form { padding: 20px; }
   .project-card__metrics { grid-template-columns: 1fr; }
 }
+
+
+/* Mechanical drawing cursor polish */
+.hero__cursor { display:inline-block; min-width:.55em; font-weight:700; transform:translateY(-1px); }
+@media (prefers-reduced-motion: reduce){ .hero__cursor { animation:none; } }

@@ -23,6 +23,9 @@ function initTypewriter() {
   let phraseIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
+  let timer;
+
+  el.textContent = '';
 
   function tick() {
     const phrase = TYPEWRITER_PHRASES[phraseIndex];
@@ -32,10 +35,10 @@ function initTypewriter() {
       el.textContent = phrase.slice(0, charIndex);
       if (charIndex === phrase.length) {
         isDeleting = true;
-        setTimeout(tick, TYPEWRITER_SPEED.holdFull);
+        timer = setTimeout(tick, TYPEWRITER_SPEED.holdFull);
         return;
       }
-      setTimeout(tick, TYPEWRITER_SPEED.typing);
+      timer = setTimeout(tick, TYPEWRITER_SPEED.typing);
       return;
     }
 
@@ -44,10 +47,10 @@ function initTypewriter() {
     if (charIndex === 0) {
       isDeleting = false;
       phraseIndex = (phraseIndex + 1) % TYPEWRITER_PHRASES.length;
-      setTimeout(tick, TYPEWRITER_SPEED.holdEmpty);
+      timer = setTimeout(tick, TYPEWRITER_SPEED.holdEmpty);
       return;
     }
-    setTimeout(tick, TYPEWRITER_SPEED.deleting);
+    timer = setTimeout(tick, TYPEWRITER_SPEED.deleting);
   }
 
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
