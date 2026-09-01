@@ -22,3 +22,19 @@ GITHUB PAGES — SIMPLE SETUP
 6. Select main and /(root), then Save.
 
 For a personal site, the repository can be named USERNAME.github.io. For a project site, the URL includes the repository name.
+
+
+CACHE MANAGEMENT (GitHub Pages)
+==============================
+This site uses cache-busting version numbers in index.html:
+- style.css?v=3
+- script.js?v=3
+
+When making future CSS or JavaScript changes, increment the version number (for example v=4). This forces browsers to request the newest file instead of using an older cached copy.
+
+After pushing changes to GitHub:
+1. Wait for GitHub Pages deployment to complete.
+2. Hard refresh your browser:
+   Windows: Ctrl + F5
+   Mac: Cmd + Shift + R
+3. If needed, test in an incognito/private window.

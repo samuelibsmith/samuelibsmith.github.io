@@ -5,8 +5,10 @@
 const TYPEWRITER_PHRASES = [
   'Mechanical Engineer',
   'CAD + Product Design',
-  'Design • Analyze • Build',
-  'Prototype + Test'
+  'Mechanical Engineering Student',
+  'CAD + Product Design',
+  'Engineering Analysis',
+  'Prototype Development'
 ];
 
 const TYPEWRITER_SPEED = {
