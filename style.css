@@ -233,7 +233,7 @@ section { padding-block: 116px; border-top: 1px solid var(--border); scroll-marg
 /* RESUME CTA */
 .resume-cta { display: grid; grid-template-columns: .7fr 1.3fr; gap: 70px; align-items: center; border-top: 1px solid var(--border); padding-block: 110px; }
 .resume-cta__visual { display: grid; place-items: center; }
-.resume-sheet { width: min(280px, 80%); aspect-ratio: .77; border: 1px solid var(--border); background-image: url('images/resume_thumbnail.png'); padding: 17px; transform: rotate(-4deg); box-shadow: 18px 24px 40px -30px rgba(0,0,0,.9); color: #273234; }
+.resume-sheet { width: min(280px, 100%); aspect-ratio: .77; border: 1px solid var(--border); background-image: url('images/resume_thumbnail.png'); padding: 17px; transform: rotate(-4deg); box-shadow: 18px 24px 40px -30px rgba(0,0,0,.9); color: #273234; }
 .resume-cta__copy p:not(.eyebrow) { color: var(--text-muted); max-width: 56ch; margin-bottom: 24px; }
 
 /* CONTACT */
