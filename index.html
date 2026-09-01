@@ -3,24 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name — Software Engineer</title>
-  <meta name="description" content="Portfolio of Your Name, a software engineer specializing in [your focus area].">
+  <title>Your Name — Mechanical Engineer</title>
+  <meta name="description" content="Portfolio of Your Name, a mechanical engineer focused on CAD, design, analysis, prototyping, and testing.">
 
-  <!-- Google Fonts: Space Grotesk (display), Inter (body), JetBrains Mono (code/labels) -->
+  <!-- Industrial/editorial typography with a technical mono accent. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style_mechanical.css">
 </head>
 <body>
-
-  <!-- ============ NAV ============ -->
   <header class="site-header">
     <nav class="nav container">
-      <a href="#hero" class="nav__logo">
-        <!-- TODO: Replace with your initials or a small monogram -->
-        <span class="nav__logo-bracket">&lt;</span>YN<span class="nav__logo-bracket">/&gt;</span>
+      <a href="#hero" class="nav__logo" aria-label="Your Name home">
+        <span class="nav__logo-mark">YN</span>
+        <span class="nav__logo-copy">MECHANICAL<br><span>ENGINEERING</span></span>
       </a>
 
       <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -29,352 +27,300 @@
 
       <ul class="nav__links" id="navLinks">
         <li><a href="#about" class="nav__link">about</a></li>
-        <li><a href="#skills" class="nav__link">skills</a></li>
+        <li><a href="#skills" class="nav__link">toolkit</a></li>
         <li><a href="#projects" class="nav__link">projects</a></li>
         <li><a href="#contact" class="nav__link">contact</a></li>
-        <li>
-          <!-- TODO: Replace with the direct link to your resume PDF -->
-          <a href="#" class="nav__resume" target="_blank" rel="noopener">resume.pdf</a>
-        </li>
+        <li><a href="resume.pdf" class="nav__resume" target="_blank" rel="noopener">view resume <span>↗</span></a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-
-    <!-- ============ HERO ============ -->
+    <!-- HERO -->
     <section id="hero" class="hero container">
-      <div class="hero__content">
-        <p class="prompt-label">$ whoami</p>
+      <div class="hero__grid">
+        <div class="hero__content">
+          <p class="eyebrow"><span class="eyebrow__line"></span> mechanical engineering portfolio</p>
+          <h1 class="hero__name">Your Name</h1>
+          <p class="hero__type"><span id="typewriter" class="hero__type-text"></span><span class="hero__cursor" aria-hidden="true">|</span></p>
+          <p class="hero__tagline">
+            I turn engineering requirements into <strong>designed, analyzed, and buildable hardware</strong> — from early concepts and CAD through prototyping, testing, and iteration.
+          </p>
 
-        <div class="terminal" role="img" aria-label="Terminal window displaying an animated title">
-          <div class="terminal__bar">
-            <span class="terminal__dot terminal__dot--red"></span>
-            <span class="terminal__dot terminal__dot--yellow"></span>
-            <span class="terminal__dot terminal__dot--green"></span>
-            <span class="terminal__title">guest@portfolio: ~</span>
+          <div class="hero__actions">
+            <a href="#projects" class="btn btn--primary">view selected work <span>↘</span></a>
+            <a href="resume.pdf" class="btn btn--ghost" target="_blank" rel="noopener">open resume <span>↗</span></a>
           </div>
-          <div class="terminal__body">
-            <!-- TODO: Replace "Your Name" -->
-            <h1 class="hero__name">Your Name</h1>
-            <p class="hero__type">
-              <span id="typewriter" class="hero__type-text"></span><span class="hero__cursor" aria-hidden="true">&#9608;</span>
-            </p>
+
+          <div class="hero__meta">
+            <div><span>01</span><strong>Design</strong></div>
+            <div><span>02</span><strong>Analyze</strong></div>
+            <div><span>03</span><strong>Build + Test</strong></div>
           </div>
         </div>
 
-        <!-- TODO: Write 1-2 sentences on what you build / are looking for -->
-        <p class="hero__tagline">
-          I build fast, accessible software and I'm currently looking for
-          <strong>software engineering internships and new-grad roles</strong>.
-          Welcome to my corner of the internet.
-        </p>
-
-        <div class="hero__actions">
-          <a href="#projects" class="btn btn--primary">view my work</a>
-          <a href="#contact" class="btn btn--ghost">get in touch</a>
-        </div>
-
-        <!-- TODO: Update these links (or remove any you don't use) -->
-        <div class="hero__socials">
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.77.12 3.06.74.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.4-5.27 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .3.2.66.79.55A10.52 10.52 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
-          </a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
-          </a>
-          <a href="mailto:your.email@example.com" aria-label="Email">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M2 4h20a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Zm18.34 2H3.66l8.34 6.5L20.34 6ZM3 7.24V18h18V7.24l-8.68 6.76a1 1 0 0 1-1.24 0L3 7.24Z"/></svg>
-          </a>
-        </div>
+        <aside class="hero__drawing" aria-label="Engineering drawing style graphic">
+          <div class="drawing__label drawing__label--top">ASSEMBLY / 001</div>
+          <div class="drawing__label drawing__label--bottom">REV A · CONCEPT</div>
+          <div class="drawing__crosshair drawing__crosshair--a"></div>
+          <div class="drawing__crosshair drawing__crosshair--b"></div>
+          <div class="drawing__part">
+            <div class="drawing__hole"></div>
+            <div class="drawing__slot"></div>
+            <div class="drawing__edge drawing__edge--1"></div>
+            <div class="drawing__edge drawing__edge--2"></div>
+          </div>
+          <div class="drawing__dimension drawing__dimension--x"><span>100</span></div>
+          <div class="drawing__dimension drawing__dimension--y"><span>42</span></div>
+          <div class="drawing__caption">
+            <span>DESIGN INTENT</span>
+            <strong>FUNCTION → FORM → FABRICATION</strong>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <!-- ============ ABOUT ============ -->
+    <!-- ABOUT -->
     <section id="about" class="about container">
-      <p class="prompt-label">$ cat about.md</p>
-      <h2 class="section-title">about me</h2>
+      <div class="section-heading">
+        <p class="eyebrow"><span class="eyebrow__line"></span> 01 / profile</p>
+        <h2 class="section-title">Engineering with a bias toward the real world.</h2>
+      </div>
 
       <div class="about__grid">
         <div class="about__text">
-          <!--
-            TODO: Replace this with your real bio. Suggested structure:
-            - Who you are / what you're studying or where you work
-            - What kind of problems you like solving
-            - A couple of specifics (school, year, focus area, notable experience)
-            - What you're looking for right now (internship / full-time)
-            Keep it to 2-4 short paragraphs — conversational, not a resume rehash.
-          -->
+          <!-- Replace the following copy with your actual school, experience, and focus areas. -->
           <p>
-            Hi, I'm <strong>Your Name</strong> — a [Computer Science student at
-            University Name, expected 20XX] with a focus on [e.g. backend systems,
-            machine learning, distributed systems]. I like taking problems apart
-            until they're simple, then building something reliable on top.
+            Hi, I'm <strong>Your Name</strong> — a mechanical engineering student / engineer focused on turning ideas into hardware that can be modeled, manufactured, and tested. I enjoy the point where design decisions meet physical constraints: loads, materials, tolerances, packaging, cost, and manufacturability.
           </p>
           <p>
-            Most recently I've been working on [brief mention of an internship,
-            research project, or standout coursework]. Outside of coding I'm
-            into [a couple of genuine interests — this is what makes people
-            remember you].
+            My portfolio is built around the engineering process, not just final renders. For each project, I aim to show the <strong>problem, design decisions, analysis, prototype, and evidence</strong> behind the result.
           </p>
           <p>
-            I'm currently looking for <strong>[internship / new-grad] software
-            engineering roles</strong> where I can [what kind of impact you want
-            to make]. Feel free to reach out — I'm always happy to talk shop.
+            I'm currently looking for <strong>mechanical engineering internships and early-career opportunities</strong> where I can contribute to product design, manufacturing, robotics, test, or other hands-on engineering work.
           </p>
-
-          <a href="#contact" class="text-link">let's talk &rarr;</a>
+          <a href="#contact" class="text-link">start a conversation <span>→</span></a>
         </div>
 
         <div class="about__meta">
-          <!-- TODO: Adjust these facts to your own background -->
           <div class="meta-card">
-            <span class="meta-card__label">based in</span>
-            <span class="meta-card__value">Your City, Country</span>
+            <span class="meta-card__label">location</span>
+            <span class="meta-card__value">Your City, State</span>
           </div>
           <div class="meta-card">
-            <span class="meta-card__label">studying</span>
-            <span class="meta-card__value">B.S. Computer Science</span>
+            <span class="meta-card__label">degree</span>
+            <span class="meta-card__value">B.S. Mechanical Engineering</span>
           </div>
           <div class="meta-card">
-            <span class="meta-card__label">graduating</span>
+            <span class="meta-card__label">graduation</span>
             <span class="meta-card__value">Month 20XX</span>
           </div>
           <div class="meta-card">
-            <span class="meta-card__label">open to</span>
-            <span class="meta-card__value">Internships &amp; new-grad roles</span>
+            <span class="meta-card__label">target roles</span>
+            <span class="meta-card__value">Design · Manufacturing · Test · Robotics</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ SKILLS ============ -->
+    <!-- SKILLS / TOOLKIT -->
     <section id="skills" class="skills container">
-      <p class="prompt-label">$ ls skills/</p>
-      <h2 class="section-title">skills &amp; tools</h2>
+      <div class="section-heading section-heading--split">
+        <div>
+          <p class="eyebrow"><span class="eyebrow__line"></span> 02 / toolkit</p>
+          <h2 class="section-title">The stack is hardware-first.</h2>
+        </div>
+        <p class="section-note">Keep this section focused on tools you can discuss confidently in an interview. Replace the examples below with your actual experience.</p>
+      </div>
 
-      <!--
-        TODO: Edit these categories/items freely. Keep 4-8 items per group
-        so the grid stays balanced. Add or remove <div class="skill-group">
-        blocks as needed.
-      -->
       <div class="skills__grid">
-
-        <div class="skill-group">
-          <h3 class="skill-group__title">languages</h3>
+        <article class="skill-group">
+          <span class="skill-group__number">01</span>
+          <h3 class="skill-group__title">CAD &amp; Design</h3>
           <ul class="skill-list">
-            <li>Python</li>
-            <li>JavaScript / TypeScript</li>
-            <li>Java</li>
-            <li>C++</li>
-            <li>SQL</li>
+            <li>Parametric part &amp; assembly modeling</li>
+            <li>Engineering drawings</li>
+            <li>GD&amp;T / tolerancing</li>
+            <li>Design for manufacture &amp; assembly</li>
           </ul>
-        </div>
+        </article>
 
-        <div class="skill-group">
-          <h3 class="skill-group__title">frontend</h3>
+        <article class="skill-group">
+          <span class="skill-group__number">02</span>
+          <h3 class="skill-group__title">Analysis</h3>
           <ul class="skill-list">
-            <li>React</li>
-            <li>HTML5 &amp; CSS3</li>
-            <li>Tailwind CSS</li>
-            <li>Next.js</li>
+            <li>FEA &amp; structural analysis</li>
+            <li>Mechanics / hand calculations</li>
+            <li>Thermal &amp; fluid fundamentals</li>
+            <li>Design trade studies</li>
           </ul>
-        </div>
+        </article>
 
-        <div class="skill-group">
-          <h3 class="skill-group__title">backend</h3>
+        <article class="skill-group">
+          <span class="skill-group__number">03</span>
+          <h3 class="skill-group__title">Prototype &amp; Build</h3>
           <ul class="skill-list">
-            <li>Node.js / Express</li>
-            <li>Django / Flask</li>
-            <li>REST &amp; GraphQL APIs</li>
-            <li>PostgreSQL</li>
+            <li>3D printing &amp; rapid prototyping</li>
+            <li>Machining / fabrication</li>
+            <li>Assembly &amp; fit checks</li>
+            <li>Iterative design refinement</li>
           </ul>
-        </div>
+        </article>
 
-        <div class="skill-group">
-          <h3 class="skill-group__title">tools &amp; platforms</h3>
+        <article class="skill-group">
+          <span class="skill-group__number">04</span>
+          <h3 class="skill-group__title">Test &amp; Integration</h3>
           <ul class="skill-list">
-            <li>Git &amp; GitHub</li>
-            <li>Docker</li>
-            <li>AWS</li>
-            <li>Linux</li>
+            <li>Test planning &amp; validation</li>
+            <li>Instrumentation &amp; data collection</li>
+            <li>Root-cause troubleshooting</li>
+            <li>Technical documentation</li>
           </ul>
-        </div>
+        </article>
+      </div>
 
-        <div class="skill-group">
-          <h3 class="skill-group__title">cs fundamentals</h3>
-          <ul class="skill-list">
-            <li>Data Structures &amp; Algorithms</li>
-            <li>Systems Design</li>
-            <li>Operating Systems</li>
-          </ul>
-        </div>
-
-        <div class="skill-group">
-          <h3 class="skill-group__title">currently learning</h3>
-          <ul class="skill-list">
-            <li>[e.g. Rust]</li>
-            <li>[e.g. Kubernetes]</li>
-          </ul>
-        </div>
-
+      <div class="tool-strip" aria-label="Software and fabrication tools">
+        <span>CAD</span><span>CAE / FEA</span><span>MATLAB</span><span>Python</span><span>Technical Drawings</span><span>3D Printing</span><span>CNC / Shop</span>
       </div>
     </section>
 
-    <!-- ============ PROJECTS ============ -->
+    <!-- PROJECTS -->
     <section id="projects" class="projects container">
-      <p class="prompt-label">$ ls projects/</p>
-      <h2 class="section-title">projects</h2>
+      <div class="section-heading section-heading--split">
+        <div>
+          <p class="eyebrow"><span class="eyebrow__line"></span> 03 / selected work</p>
+          <h2 class="section-title">Show the engineering, not just the object.</h2>
+        </div>
+        <p class="section-note">Recruiters should be able to scan the project image, outcome, tools, and your contribution in seconds. Lead with evidence: dimensions, mass, load, temperature, speed, cost, test data, or other measurable results.</p>
+      </div>
 
       <div class="projects__grid">
-
-        <!--
-          TODO: Duplicate this <article class="project-card"> block for each
-          project. For each one, replace:
-            - the image src (swap the placeholder div for an <img>, or keep
-              the placeholder styling and just change the initials/gradient)
-            - title, description, tech tags
-            - the "code" link (GitHub repo) and "live" link (deployed demo)
-          Aim for 3-6 of your strongest projects, not everything you've built.
-        -->
-        <article class="project-card">
-          <div class="project-card__image" data-placeholder="01">
-            <!-- Replace this div's content with: <img src="images/project1.png" alt="Screenshot of Project One"> -->
+        <!-- Replace each image and project copy with your real work. -->
+        <article class="project-card project-card--featured">
+          <div class="project-card__visual project-card__visual--blueprint">
+            <div class="visual__chrome"><span>CAD VIEW</span><span>REV A</span></div>
+            <div class="visual__part visual__part--large"></div>
+            <div class="visual__dimension visual__dimension--one">Ø32</div>
+            <div class="visual__dimension visual__dimension--two">R8</div>
+            <span class="visual__stamp">FEATURED</span>
           </div>
           <div class="project-card__body">
-            <h3 class="project-card__title">Project One</h3>
-            <p class="project-card__desc">
-              One or two sentences on what this project does and the problem
-              it solves. Focus on impact and your specific contribution.
-            </p>
-            <ul class="project-card__tags">
-              <li>React</li>
-              <li>Node.js</li>
-              <li>PostgreSQL</li>
-            </ul>
-            <div class="project-card__links">
-              <!-- TODO: replace with your repo URL -->
-              <a href="https://github.com/yourusername/project-one" target="_blank" rel="noopener" class="project-link">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.77.12 3.06.74.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.4-5.27 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .3.2.66.79.55A10.52 10.52 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
-                code
-              </a>
-              <!-- TODO: replace with your live demo URL, or delete this <a> if there isn't one -->
-              <a href="#" target="_blank" rel="noopener" class="project-link">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
-                live demo
-              </a>
+            <div class="project-card__eyebrow"><span>01</span> DESIGN + ANALYSIS</div>
+            <h3 class="project-card__title">Project One — Engineered Component</h3>
+            <p class="project-card__desc">Replace this with a one-line outcome: what you designed, why it mattered, and the result you achieved.</p>
+            <div class="project-card__metrics">
+              <div><span>role</span><strong>Your contribution</strong></div>
+              <div><span>result</span><strong>+XX% / −XX%</strong></div>
             </div>
+            <ul class="project-card__tags"><li>CAD</li><li>FEA</li><li>GD&amp;T</li><li>Prototype</li></ul>
+            <a href="#" class="project-link">view case study <span>↗</span></a>
           </div>
         </article>
 
         <article class="project-card">
-          <div class="project-card__image" data-placeholder="02"></div>
+          <div class="project-card__visual project-card__visual--photo">
+            <div class="visual__photo-placeholder"><span>02</span><small>prototype / test</small></div>
+            <div class="visual__badge">BUILD</div>
+          </div>
           <div class="project-card__body">
-            <h3 class="project-card__title">Project Two</h3>
-            <p class="project-card__desc">
-              One or two sentences on what this project does and the problem
-              it solves. Focus on impact and your specific contribution.
-            </p>
-            <ul class="project-card__tags">
-              <li>Python</li>
-              <li>Flask</li>
-              <li>Docker</li>
-            </ul>
-            <div class="project-card__links">
-              <a href="https://github.com/yourusername/project-two" target="_blank" rel="noopener" class="project-link">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.77.12 3.06.74.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.4-5.27 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .3.2.66.79.55A10.52 10.52 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
-                code
-              </a>
-              <a href="#" target="_blank" rel="noopener" class="project-link">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
-                live demo
-              </a>
+            <div class="project-card__eyebrow"><span>02</span> PROTOTYPE + TEST</div>
+            <h3 class="project-card__title">Project Two — Test / Prototype System</h3>
+            <p class="project-card__desc">Show the physical build, what you measured, and how test results changed the design.</p>
+            <div class="project-card__metrics">
+              <div><span>method</span><strong>Test rig / bench</strong></div>
+              <div><span>evidence</span><strong>Measured data</strong></div>
             </div>
+            <ul class="project-card__tags"><li>Fabrication</li><li>Instrumentation</li><li>Validation</li></ul>
+            <a href="#" class="project-link">view case study <span>↗</span></a>
           </div>
         </article>
 
         <article class="project-card">
-          <div class="project-card__image" data-placeholder="03"></div>
+          <div class="project-card__visual project-card__visual--section">
+            <div class="visual__chrome"><span>ANALYSIS</span><span>RESULT</span></div>
+            <div class="analysis__bars"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="analysis__legend"><span>stress</span><span>deflection</span><span>factor of safety</span></div>
+          </div>
           <div class="project-card__body">
-            <h3 class="project-card__title">Project Three</h3>
-            <p class="project-card__desc">
-              One or two sentences on what this project does and the problem
-              it solves. Focus on impact and your specific contribution.
-            </p>
-            <ul class="project-card__tags">
-              <li>Java</li>
-              <li>Algorithms</li>
-            </ul>
-            <div class="project-card__links">
-              <a href="https://github.com/yourusername/project-three" target="_blank" rel="noopener" class="project-link">
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.77.12 3.06.74.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.4-5.27 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .3.2.66.79.55A10.52 10.52 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
-                code
-              </a>
+            <div class="project-card__eyebrow"><span>03</span> ANALYSIS + OPTIMIZATION</div>
+            <h3 class="project-card__title">Project Three — Simulation / Optimization</h3>
+            <p class="project-card__desc">Use this slot for an FEA, thermal, kinematics, or optimization study with a clear engineering decision.</p>
+            <div class="project-card__metrics">
+              <div><span>question</span><strong>What changed?</strong></div>
+              <div><span>validation</span><strong>How did you check it?</strong></div>
             </div>
+            <ul class="project-card__tags"><li>CAE</li><li>MATLAB</li><li>Trade Study</li></ul>
+            <a href="#" class="project-link">view case study <span>↗</span></a>
           </div>
         </article>
+      </div>
 
+      <div class="project-process">
+        <div><span>REQUIREMENTS</span><strong>→</strong></div>
+        <div><span>CONCEPTS</span><strong>→</strong></div>
+        <div><span>CAD / ANALYSIS</span><strong>→</strong></div>
+        <div><span>BUILD</span><strong>→</strong></div>
+        <div><span>TEST / ITERATE</span></div>
       </div>
     </section>
 
-    <!-- ============ CONTACT ============ -->
-    <section id="contact" class="contact container">
-      <p class="prompt-label">$ ./contact --me</p>
-      <h2 class="section-title">get in touch</h2>
-
-      <div class="contact__wrap">
-        <p class="contact__intro">
-          <!-- TODO: personalize this line -->
-          I'm actively looking for internship and full-time engineering
-          opportunities — if you'd like to chat, reach out any of these ways.
-        </p>
-
-        <!--
-          This form is front-end only. To make it actually send you email,
-          hook it up to a form service (see the JS comments in script.js for
-          two easy options: Formspree or mailto fallback).
-        -->
-        <form class="contact__form" id="contactForm">
-          <div class="form-row">
-            <label for="name">name</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div class="form-row">
-            <label for="email">email</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-row">
-            <label for="message">message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn btn--primary">send message</button>
-          <p class="form-status" id="formStatus" role="status"></p>
-        </form>
-
-        <div class="contact__direct">
-          <!-- TODO: replace with your real contact details -->
-          <a href="mailto:your.email@example.com" class="contact__direct-link">your.email@example.com</a>
-          <div class="hero__socials">
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.11-3.2.7-3.87-1.36-3.87-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.77.12 3.06.74.8 1.18 1.83 1.18 3.09 0 4.43-2.7 5.4-5.27 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .3.2.66.79.55A10.52 10.52 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
-            </a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.8 0 0 .78 0 1.75v20.5C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.75V1.75C24 .78 23.2 0 22.22 0Z"/></svg>
-            </a>
-          </div>
+    <!-- RESUME -->
+    <section class="resume-cta container">
+      <div class="resume-cta__visual">
+        <div class="resume-sheet">
+          <div class="resume-sheet__top"><span>RESUME</span><span>01 / 01</span></div>
+          <div class="resume-sheet__line resume-sheet__line--wide"></div>
+          <div class="resume-sheet__line"></div>
+          <div class="resume-sheet__line resume-sheet__line--short"></div>
+          <div class="resume-sheet__cols"><i></i><i></i></div>
+          <div class="resume-sheet__line resume-sheet__line--wide"></div>
+          <div class="resume-sheet__cols"><i></i><i></i></div>
         </div>
       </div>
+      <div class="resume-cta__copy">
+        <p class="eyebrow"><span class="eyebrow__line"></span> 04 / resume</p>
+        <h2 class="section-title">Want the one-page version?</h2>
+        <p>Keep the website visual and detailed; let the resume stay fast and scannable. Put the strongest technical bullets, education, experience, and core tools there.</p>
+        <a href="resume.pdf" class="btn btn--primary" target="_blank" rel="noopener">view resume <span>↗</span></a>
+      </div>
     </section>
 
+    <!-- CONTACT -->
+    <section id="contact" class="contact container">
+      <div class="section-heading">
+        <p class="eyebrow"><span class="eyebrow__line"></span> 05 / contact</p>
+        <h2 class="section-title">Let's talk about the next build.</h2>
+      </div>
+      <div class="contact__grid">
+        <div class="contact__intro">
+          <p>I'm open to conversations about mechanical engineering internships, early-career roles, design teams, and hands-on engineering projects.</p>
+          <div class="contact__direct">
+            <a href="mailto:your.email@example.com" class="contact__direct-link">your.email@example.com</a>
+            <div class="contact__socials">
+              <a href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn ↗</a>
+              <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact__form" id="contactForm">
+          <div class="form-row"><label for="name">your name</label><input type="text" id="name" name="name" autocomplete="name" required></div>
+          <div class="form-row"><label for="email">your email</label><input type="email" id="email" name="email" autocomplete="email" required></div>
+          <div class="form-row"><label for="message">message</label><textarea id="message" name="message" rows="6" required></textarea></div>
+          <button type="submit" class="btn btn--primary">send message <span>→</span></button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <p class="container">
-      <!-- TODO: keep or replace this line -->
-      &copy; <span id="year"></span> Your Name. Built with HTML, CSS &amp; JS.
-    </p>
+    <div class="container site-footer__inner">
+      <p>© <span id="year"></span> Your Name</p>
+      <p>Designed / built for mechanical engineering.</p>
+    </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script_mechanical.js"></script>
 </body>
 </html>
