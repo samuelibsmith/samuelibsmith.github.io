@@ -115,7 +115,7 @@ function initContactForm() {
     // Replace with your real address, or switch this to Formspree / another form service.
     const subject = encodeURIComponent(`Portfolio contact from ${name}`);
     const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-    window.location.href = `mailto:your.email@example.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:YOUR_EMAIL@example.com?subject=${subject}&body=${body}`;
 
     status.classList.remove('is-error');
     status.textContent = 'Opening your email client…';
