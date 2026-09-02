@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style-paper.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
   <header class="site-header">
@@ -107,22 +107,16 @@
           <a href="#contact" class="text-link">get in touch <span>→</span></a>
         </div>
 
-        <div class="about__meta">
-          <div class="meta-card">
-            <span class="meta-card__label">location</span>
-            <span class="meta-card__value">Boston, MA</span>
+        <div class="about__side">
+          <div class="headshot-card">
+            <img class="headshot-card__image" src="images/headshot.jpg" alt="Portrait of Samuel Smith">
+            <div class="headshot-card__caption"><span>Samuel Smith</span><strong>MECHANICAL ENGINEERING</strong></div>
           </div>
-          <div class="meta-card">
-            <span class="meta-card__label">degree</span>
-            <span class="meta-card__value">M.S. Mechanical Engineering · Boston University</span>
-          </div>
-          <div class="meta-card">
-            <span class="meta-card__label">graduation</span>
-            <span class="meta-card__value">December 2028</span>
-          </div>
-          <div class="meta-card">
-            <span class="meta-card__label">target roles</span>
-            <span class="meta-card__value">Product Design · Manufacturing · Robotics · Wearable Tech</span>
+          <div class="about__meta">
+            <div class="meta-card"><span class="meta-card__label">location</span><span class="meta-card__value">Boston, MA</span></div>
+            <div class="meta-card"><span class="meta-card__label">degree</span><span class="meta-card__value">M.S. Mechanical Engineering · Boston University</span></div>
+            <div class="meta-card"><span class="meta-card__label">graduation</span><span class="meta-card__value">December 2028</span></div>
+            <div class="meta-card"><span class="meta-card__label">target roles</span><span class="meta-card__value">Product Design · Manufacturing · Robotics · Wearable Tech</span></div>
           </div>
         </div>
       </div>
@@ -201,12 +195,24 @@
       <div class="projects__grid">
         <!-- Replace each image and project copy with your real work. -->
         <article class="project-card project-card--featured">
-          <div class="project-card__visual project-card__visual--blueprint">
-            <div class="visual__chrome"><span>CAD VIEW</span><span>REV A</span></div>
-            <div class="visual__part visual__part--large"></div>
-            <div class="visual__dimension visual__dimension--one">Ø32</div>
-            <div class="visual__dimension visual__dimension--two">R8</div>
-            <span class="visual__stamp">FEATURED</span>
+          <div class="project-card__visual project-card__visual--carousel">
+            <div class="carousel" data-carousel tabindex="0" aria-label="Project 01 image carousel">
+              <div class="carousel__viewport"><div class="carousel__track">
+                <figure class="carousel__slide"><img src="images/project-01-01.jpg.svg" alt="Project 01 — design / CAD, image 1"><span class="carousel__label">design / CAD</span></figure>
+                <figure class="carousel__slide"><img src="images/project-01-02.jpg.svg" alt="Project 01 — design / CAD, image 2"><span class="carousel__label">design / CAD</span></figure>
+                <figure class="carousel__slide"><img src="images/project-01-03.jpg.svg" alt="Project 01 — design / CAD, image 3"><span class="carousel__label">design / CAD</span></figure>
+              </div></div>
+              <span class="carousel__counter" aria-hidden="true">01 / 03</span>
+              <div class="carousel__dots" aria-label="Choose project image">
+                <button class="carousel__dot is-active" type="button" aria-label="Show image 1"></button>
+                <button class="carousel__dot" type="button" aria-label="Show image 2"></button>
+                <button class="carousel__dot" type="button" aria-label="Show image 3"></button>
+              </div>
+              <div class="carousel__controls">
+                <button class="carousel__button" type="button" data-carousel-prev aria-label="Previous image">←</button>
+                <button class="carousel__button" type="button" data-carousel-next aria-label="Next image">→</button>
+              </div>
+            </div>
           </div>
           <div class="project-card__body">
             <div class="project-card__eyebrow"><span>01</span> DESIGN + ANALYSIS</div>
@@ -217,14 +223,29 @@
               <div><span>result</span><strong>+XX% / −XX%</strong></div>
             </div>
             <ul class="project-card__tags"><li>CAD</li><li>FEA</li><li>GD&amp;T</li><li>Prototype</li></ul>
-            <a href="#" class="project-link">view case study <span>↗</span></a>
+            <a href="#" class="project-link" aria-label="Project case study coming soon">view case study <span>↗</span></a>
           </div>
         </article>
 
         <article class="project-card">
-          <div class="project-card__visual project-card__visual--photo">
-            <div class="visual__photo-placeholder"><span>02</span><small>prototype / test</small></div>
-            <div class="visual__badge">BUILD</div>
+          <div class="project-card__visual project-card__visual--carousel">
+            <div class="carousel" data-carousel tabindex="0" aria-label="Project 02 image carousel">
+              <div class="carousel__viewport"><div class="carousel__track">
+                <figure class="carousel__slide"><img src="images/project-02-01.jpg.svg" alt="Project 02 — prototype / test, image 1"><span class="carousel__label">prototype / test</span></figure>
+                <figure class="carousel__slide"><img src="images/project-02-02.jpg.svg" alt="Project 02 — prototype / test, image 2"><span class="carousel__label">prototype / test</span></figure>
+                <figure class="carousel__slide"><img src="images/project-02-03.jpg.svg" alt="Project 02 — prototype / test, image 3"><span class="carousel__label">prototype / test</span></figure>
+              </div></div>
+              <span class="carousel__counter" aria-hidden="true">01 / 03</span>
+              <div class="carousel__dots" aria-label="Choose project image">
+                <button class="carousel__dot is-active" type="button" aria-label="Show image 1"></button>
+                <button class="carousel__dot" type="button" aria-label="Show image 2"></button>
+                <button class="carousel__dot" type="button" aria-label="Show image 3"></button>
+              </div>
+              <div class="carousel__controls">
+                <button class="carousel__button" type="button" data-carousel-prev aria-label="Previous image">←</button>
+                <button class="carousel__button" type="button" data-carousel-next aria-label="Next image">→</button>
+              </div>
+            </div>
           </div>
           <div class="project-card__body">
             <div class="project-card__eyebrow"><span>02</span> PROTOTYPE + TEST</div>
@@ -235,15 +256,29 @@
               <div><span>evidence</span><strong>Measured data</strong></div>
             </div>
             <ul class="project-card__tags"><li>Fabrication</li><li>Instrumentation</li><li>Validation</li></ul>
-            <a href="#" class="project-link">view case study <span>↗</span></a>
+            <a href="#" class="project-link" aria-label="Project case study coming soon">view case study <span>↗</span></a>
           </div>
         </article>
 
         <article class="project-card">
-          <div class="project-card__visual project-card__visual--section">
-            <div class="visual__chrome"><span>ANALYSIS</span><span>RESULT</span></div>
-            <div class="analysis__bars"><i></i><i></i><i></i><i></i><i></i></div>
-            <div class="analysis__legend"><span>stress</span><span>deflection</span><span>factor of safety</span></div>
+          <div class="project-card__visual project-card__visual--carousel">
+            <div class="carousel" data-carousel tabindex="0" aria-label="Project 03 image carousel">
+              <div class="carousel__viewport"><div class="carousel__track">
+                <figure class="carousel__slide"><img src="images/project-03-01.jpg.svg" alt="Project 03 — analysis / result, image 1"><span class="carousel__label">analysis / result</span></figure>
+                <figure class="carousel__slide"><img src="images/project-03-02.jpg.svg" alt="Project 03 — analysis / result, image 2"><span class="carousel__label">analysis / result</span></figure>
+                <figure class="carousel__slide"><img src="images/project-03-03.jpg.svg" alt="Project 03 — analysis / result, image 3"><span class="carousel__label">analysis / result</span></figure>
+              </div></div>
+              <span class="carousel__counter" aria-hidden="true">01 / 03</span>
+              <div class="carousel__dots" aria-label="Choose project image">
+                <button class="carousel__dot is-active" type="button" aria-label="Show image 1"></button>
+                <button class="carousel__dot" type="button" aria-label="Show image 2"></button>
+                <button class="carousel__dot" type="button" aria-label="Show image 3"></button>
+              </div>
+              <div class="carousel__controls">
+                <button class="carousel__button" type="button" data-carousel-prev aria-label="Previous image">←</button>
+                <button class="carousel__button" type="button" data-carousel-next aria-label="Next image">→</button>
+              </div>
+            </div>
           </div>
           <div class="project-card__body">
             <div class="project-card__eyebrow"><span>03</span> ANALYSIS + OPTIMIZATION</div>
@@ -254,7 +289,7 @@
               <div><span>validation</span><strong>How did you check it?</strong></div>
             </div>
             <ul class="project-card__tags"><li>CAE</li><li>MATLAB</li><li>Trade Study</li></ul>
-            <a href="#" class="project-link">view case study <span>↗</span></a>
+            <a href="#" class="project-link" aria-label="Project case study coming soon">view case study <span>↗</span></a>
           </div>
         </article>
       </div>
@@ -268,35 +303,10 @@
       </div>
     </section>
 
-    <!-- RESUME -->
-    <section class="resume-cta container">
-      <div class="resume-cta__visual">
-        <div class="resume-sheet">
-          <div class="resume-sheet__top"><span>RESUME</span><span>01 / 01</span></div>
-          <div class="resume-sheet__line resume-sheet__line--wide"></div>
-          <div class="resume-sheet__line"></div>
-          <div class="resume-sheet__line resume-sheet__line--short"></div>
-          <div class="resume-sheet__cols"><i></i><i></i></div>
-          <div class="resume-sheet__line resume-sheet__line--wide"></div>
-          <div class="resume-sheet__cols"><i></i><i></i></div>
-        </div>
-      </div>
-      <div class="resume-cta__copy">
-        <p class="eyebrow"><span class="eyebrow__line"></span> 04 / resume</p>
-        <h2 class="section-title">Want to see the one-page version?</h2>
-        <p> 
-          <ul>
-            <li><u>EDUCATION:</u> Boston University, M.S. in Mechanical Engineering  |  Ithaca College, B.S in Physics</li>
-            <li><u>SKILLS:</u> Solidworks, Fusion360, 3D Printing, Python (Matplotlib, NumPy, SciPy, Pandas), Firmware Development (C++), ESP32</li>
-          </ul></p>
-        <a href="resume.pdf" class="btn btn--primary" target="_blank" rel="noopener"> download full resume <span>↗</span></a>
-      </div>
-    </section>
-
     <!-- CONTACT -->
     <section id="contact" class="contact container">
       <div class="section-heading">
-        <p class="eyebrow"><span class="eyebrow__line"></span> 05 / contact</p>
+        <p class="eyebrow"><span class="eyebrow__line"></span> 04 / contact</p>
         <h2 class="section-title">Let's get in touch</h2>
       </div>
       <div class="contact__grid">
@@ -329,6 +339,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>
