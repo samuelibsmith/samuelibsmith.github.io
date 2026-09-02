@@ -13,6 +13,31 @@ const TYPEWRITER_PHRASES = [
 
 const TYPEWRITER_SPEED = { typing: 65, deleting: 35, holdFull: 1500, holdEmpty: 450 };
 
+
+function initThemeControl() {
+  const buttons = document.querySelectorAll('[data-theme-choice]');
+  if (!buttons.length) return;
+
+  const getPreference = () => localStorage.getItem('portfolio-theme') || 'system';
+  const applyPreference = preference => {
+    if (preference === 'system') {
+      delete document.documentElement.dataset.theme;
+    } else {
+      document.documentElement.dataset.theme = preference;
+    }
+    localStorage.setItem('portfolio-theme', preference);
+    buttons.forEach(button => button.classList.toggle('is-active', button.dataset.themeChoice === preference));
+  };
+
+  applyPreference(getPreference());
+  buttons.forEach(button => button.addEventListener('click', () => applyPreference(button.dataset.themeChoice)));
+
+  const media = window.matchMedia('(prefers-color-scheme: dark)');
+  media.addEventListener?.('change', () => {
+    if (getPreference() === 'system') applyPreference('system');
+  });
+}
+
 function initTypewriter() {
   const el = document.getElementById('typewriter');
   if (!el || TYPEWRITER_PHRASES.length === 0) return;
@@ -114,5 +139,5 @@ function initCarousels() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  initTypewriter(); initMobileNav(); initScrollSpy(); initContactForm(); initFooterYear(); initCarousels();
+  initThemeControl(); initTypewriter(); initMobileNav(); initScrollSpy(); initContactForm(); initFooterYear(); initCarousels();
 });
