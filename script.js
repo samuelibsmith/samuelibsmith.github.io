@@ -15,27 +15,61 @@ const TYPEWRITER_SPEED = { typing: 65, deleting: 35, holdFull: 1500, holdEmpty: 
 
 
 function initThemeControl() {
+  const switcher = document.getElementById('themeSwitch');
   const buttons = document.querySelectorAll('[data-theme-choice]');
-  if (!buttons.length) return;
+  if (!switcher || buttons.length !== 2) return;
 
-  const getPreference = () => localStorage.getItem('portfolio-theme') || 'system';
-  const applyPreference = preference => {
-    if (preference === 'system') {
-      delete document.documentElement.dataset.theme;
-    } else {
-      document.documentElement.dataset.theme = preference;
+  const STORAGE_KEY = 'portfolio-theme';
+  const media = window.matchMedia('(prefers-color-scheme: dark)');
+
+  const getSystemTheme = () => (media.matches ? 'dark' : 'light');
+
+  const getSavedTheme = () => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      return saved === 'light' || saved === 'dark' ? saved : null;
+    } catch (e) {
+      return null;
     }
-    localStorage.setItem('portfolio-theme', preference);
-    buttons.forEach(button => button.classList.toggle('is-active', button.dataset.themeChoice === preference));
   };
 
-  applyPreference(getPreference());
-  buttons.forEach(button => button.addEventListener('click', () => applyPreference(button.dataset.themeChoice)));
+  const applyTheme = (theme, persist = false) => {
+    document.documentElement.dataset.theme = theme;
+    switcher.dataset.themeState = theme;
 
-  const media = window.matchMedia('(prefers-color-scheme: dark)');
-  media.addEventListener?.('change', () => {
-    if (getPreference() === 'system') applyPreference('system');
+    buttons.forEach((button) => {
+      const active = button.dataset.themeChoice === theme;
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-pressed', String(active));
+    });
+
+    if (persist) {
+      try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) {}
+    }
+  };
+
+  // First visit: follow the system/browser preference without showing an
+  // "Auto" choice. Once the visitor uses the toggle, their choice is saved.
+  applyTheme(getSavedTheme() || getSystemTheme(), false);
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const nextTheme = button.dataset.themeChoice;
+      applyTheme(nextTheme, true);
+    });
   });
+
+  // If the visitor has never manually selected a theme, continue following
+  // system changes while the page is open.
+  const handleSystemChange = () => {
+    if (!getSavedTheme()) applyTheme(getSystemTheme(), false);
+  };
+
+  if (media.addEventListener) {
+    media.addEventListener('change', handleSystemChange);
+  } else {
+    media.addListener(handleSystemChange);
+  }
 }
 
 function initTypewriter() {

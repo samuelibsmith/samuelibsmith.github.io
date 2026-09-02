@@ -3,6 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark light">
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem('portfolio-theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.dataset.theme = saved;
+        }
+      } catch (e) {}
+    })();
+  </script>
   <title>Samuel Smith — Mechanical Engineering Student</title>
   <meta name="description" content="Portfolio of Samuel Smith, a mechanical engineering student focused on CAD, design, analysis, prototyping, and testing.">
 
@@ -31,10 +42,12 @@
         <li><a href="#projects" class="nav__link">projects</a></li>
         <li><a href="#contact" class="nav__link">contact</a></li>
         <li><a href="resume.pdf" class="nav__resume" target="_blank" rel="noopener">view resume <span>↗</span></a></li>
-        <li class="nav__theme" aria-label="Color theme">
-          <button class="theme-toggle" type="button" data-theme-choice="system" aria-label="Use system color theme">auto</button>
-          <button class="theme-toggle" type="button" data-theme-choice="light" aria-label="Use light color theme">light</button>
-          <button class="theme-toggle" type="button" data-theme-choice="dark" aria-label="Use dark color theme">dark</button>
+        <li class="nav__theme">
+          <div class="theme-switch" id="themeSwitch" role="group" aria-label="Appearance">
+            <span class="theme-switch__thumb" aria-hidden="true"></span>
+            <button class="theme-switch__option" type="button" data-theme-choice="light" aria-label="Switch to light appearance" title="Light appearance">☼</button>
+            <button class="theme-switch__option" type="button" data-theme-choice="dark" aria-label="Switch to dark appearance" title="Dark appearance">☾</button>
+          </div>
         </li>
       </ul>
     </nav>
