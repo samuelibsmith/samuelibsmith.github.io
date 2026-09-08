@@ -1,31 +1,14 @@
-# Mechanical Engineering Portfolio — GitHub Pages
+# Samuel Smith Portfolio — ENG ME 360 merged update
+
+This package uses the current portfolio as the base and adds the ENG ME 360 course portfolio page from the `ENG360-Portfolio-Addition` branch.
 
 ## Files
-- `index.html` — main portfolio page
-- `engme360.html` — detailed ENG ME 360 course-project portfolio page
-- `style.css` — site and case-study styling
-- `script.js` — navigation, scroll spy, typewriter, contact form, footer year
-- `images/` — put your own images here when ready
-- `resume.pdf` — put your resume here
+- `index.html` — current main portfolio, with ENG ME 360 linked from Selected Work
+- `engme360.html` — detailed ENG ME 360 portfolio page, preserving the branch structure/content placeholders
+- `style.css` — current Brushed Steel + Engineering Blue visual system, light/dark appearance, plus case-study styles
+- `script.js` — current site interactions and appearance control
+- `images/` — current headshot and project placeholders
+- `resume.pdf` — current resume
 
-## ENG ME 360 direct link
-The course portfolio is intentionally a separate static page so it can be submitted directly:
-
-`https://YOUR_USERNAME.github.io/YOUR_REPOSITORY/engme360.html`
-
-For a user-site repository named `YOUR_USERNAME.github.io`, the URL becomes:
-
-`https://YOUR_USERNAME.github.io/engme360.html`
-
-## Replacing placeholders
-Search for `Your Name`, `YOUR_EMAIL`, `YOUR_USERNAME`, and bracketed `[ ... ]` text in the HTML. The ENG ME 360 page includes empty figure boxes instead of generated images; replace those boxes with your own project photos, CAD renders, drawings, plots, and videos.
-
-## Cache busting
-The HTML references are versioned:
-
-```html
-<link rel="stylesheet" href="style.css?v=4">
-<script src="script.js?v=4"></script>
-```
-
-When you make a CSS or JavaScript change that appears stuck in an old browser cache, increment the version number (`?v=5`, then `?v=6`, etc.) and push the commit. GitHub Pages will redeploy automatically. After deployment finishes, a hard refresh (`Ctrl+F5` on Windows, `Cmd+Shift+R` on macOS) can clear a local browser cache.
+## Important
+The ENG ME 360 page still contains the branch's `[ ... ]` placeholders because the branch source does not provide the actual course-project details. Those should be replaced with your real course content and media.
