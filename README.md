@@ -1,24 +1,22 @@
-# Samuel Smith Portfolio — Steel / Blue v1
+# Samuel Smith Portfolio — ENG ME 360 merged update
 
-A manufacturing-inspired redesign using a restrained steel/graphite palette, burgundy as a secondary identity color, and engineering blue as the primary accent. A small machining-yellow signal color is used sparingly for emphasis.
-
-## Appearance
-- First visit follows the visitor's system/browser light/dark preference.
-- Manual Light/Dark toggle is available in the header.
-- Manual selections are saved in localStorage.
-- If no manual choice exists, system preference changes continue to update the page.
-
-## Layout
-- Headshot remains in the hero.
-- Profile copy is centered and compact.
-- Resume section is omitted; resume remains available from the header and hero.
-- Project carousels remain the primary visual presentation.
-- Decorative engineering-drawing flourishes are minimized.
+This package uses the current portfolio as the base and adds the ENG ME 360 course portfolio page from the `ENG360-Portfolio-Addition` branch.
 
 ## Files
-- `index.html` — page structure and existing copy
-- `style.css` — responsive visual system and Light/Dark themes
-- `script.js` — appearance toggle, typewriter, navigation, carousels, contact form, footer year
-- `images/headshot.jpg` — supplied headshot
-- `images/project-*.svg` — temporary project-image placeholders
-- `resume.pdf` — existing resume
+- `index.html` — current main portfolio, with ENG ME 360 linked from Selected Work
+- `engme360.html` — detailed ENG ME 360 portfolio page, preserving the branch structure/content placeholders
+- `style.css` — current Brushed Steel + Engineering Blue visual system, light/dark appearance, plus case-study styles
+- `script.js` — current site interactions and appearance control
+- `images/` — current headshot and project placeholders
+- `resume.pdf` — current resume
+
+## Important
+The ENG ME 360 page still contains the branch's `[ ... ]` placeholders because the branch source does not provide the actual course-project details. Those should be replaced with your real course content and media.
+
+
+## Adding Project 02 images
+Place three real project images in `images/` using these exact filenames:
+- `project-02-01.jpg`
+- `project-02-02.jpg`
+- `project-02-03.jpg`
+Then commit and push them with Git. The main page carousel will load them automatically.
