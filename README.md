@@ -12,3 +12,11 @@ This package uses the current portfolio as the base and adds the ENG ME 360 cour
 
 ## Important
 The ENG ME 360 page still contains the branch's `[ ... ]` placeholders because the branch source does not provide the actual course-project details. Those should be replaced with your real course content and media.
+
+
+## Adding Project 02 images
+Place three real project images in `images/` using these exact filenames:
+- `project-02-01.jpg`
+- `project-02-02.jpg`
+- `project-02-03.jpg`
+Then commit and push them with Git. The main page carousel will load them automatically.

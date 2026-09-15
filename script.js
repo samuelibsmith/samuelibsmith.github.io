@@ -19,7 +19,6 @@ function initThemeControl() {
   const buttons = document.querySelectorAll('[data-theme-choice]');
   if (!switcher || buttons.length !== 2) return;
 
-  // This key is intentionally shared by every page in the portfolio.
   const STORAGE_KEY = 'portfolio-theme';
   const media = window.matchMedia('(prefers-color-scheme: dark)');
 
@@ -35,34 +34,33 @@ function initThemeControl() {
   };
 
   const applyTheme = (theme, persist = false) => {
-    const normalized = theme === 'dark' ? 'dark' : 'light';
-    document.documentElement.dataset.theme = normalized;
-    switcher.dataset.themeState = normalized;
+    document.documentElement.dataset.theme = theme;
+    switcher.dataset.themeState = theme;
 
     buttons.forEach((button) => {
-      const active = button.dataset.themeChoice === normalized;
+      const active = button.dataset.themeChoice === theme;
       button.classList.toggle('is-active', active);
       button.setAttribute('aria-pressed', String(active));
     });
 
     if (persist) {
-      try {
-        localStorage.setItem(STORAGE_KEY, normalized);
-      } catch (e) {}
+      try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) {}
     }
   };
 
-  // The inline script in <head> already paints the correct theme. Re-sync
-  // here and update the control state once the DOM is ready.
+  // First visit: follow the system/browser preference without showing an
+  // "Auto" choice. Once the visitor uses the toggle, their choice is saved.
   applyTheme(getSavedTheme() || getSystemTheme(), false);
 
   buttons.forEach((button) => {
     button.addEventListener('click', () => {
-      applyTheme(button.dataset.themeChoice, true);
+      const nextTheme = button.dataset.themeChoice;
+      applyTheme(nextTheme, true);
     });
   });
 
-  // With no manual choice, continue following OS/browser changes.
+  // If the visitor has never manually selected a theme, continue following
+  // system changes while the page is open.
   const handleSystemChange = () => {
     if (!getSavedTheme()) applyTheme(getSystemTheme(), false);
   };
@@ -72,14 +70,6 @@ function initThemeControl() {
   } else {
     media.addListener(handleSystemChange);
   }
-
-  // Keep the UI synchronized if another portfolio page changes the saved
-  // preference while this page remains open in another tab.
-  window.addEventListener('storage', (event) => {
-    if (event.key === STORAGE_KEY) {
-      applyTheme(event.newValue === 'dark' ? 'dark' : event.newValue === 'light' ? 'light' : getSystemTheme(), false);
-    }
-  });
 }
 
 function initTypewriter() {
