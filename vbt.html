@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark light">
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem('portfolio-theme');
+        if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+      } catch (e) {}
+    })();
+  </script>
+  <title>Velocity-Based Trainer | Samuel Smith</title>
+  <meta name="description" content="Velocity-Based Trainer project portfolio by Samuel Smith, focused on mechanical design, ESP32 firmware, electromechanical integration, and prototyping.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=10">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="index.html#hero" class="nav__logo" aria-label="Samuel Smith home"><span class="nav__logo-mark">SS</span><span class="nav__logo-copy">MECHANICAL<br><span>ENGINEERING</span></span></a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html#about" class="nav__link">about</a></li>
+        <li><a href="index.html#skills" class="nav__link">skills</a></li>
+        <li><a href="index.html#projects" class="nav__link">projects</a></li>
+        <li><a href="index.html#contact" class="nav__link">contact</a></li>
+        <li><a href="resume.pdf" class="nav__resume" target="_blank" rel="noopener">view resume <span>↗</span></a></li>
+        <li class="nav__theme"><div class="theme-switch" id="themeSwitch" role="group" aria-label="Appearance"><span class="theme-switch__thumb" aria-hidden="true"></span><button class="theme-switch__option" type="button" data-theme-choice="light" aria-label="Switch to light appearance" title="Light appearance">☼</button><button class="theme-switch__option" type="button" data-theme-choice="dark" aria-label="Switch to dark appearance" title="Dark appearance">☾</button></div></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="case-study container">
+    <section class="case-hero">
+      <div>
+        <p class="eyebrow"><span class="eyebrow__line"></span> 02 / PERSONAL PROJECT</p>
+        <h1>Velocity-Based Trainer.</h1>
+        <p class="case-hero__lead">I designed and built a first-prototype Velocity-Based Trainer (VBT) to deliver the core functionality of commercially available systems at approximately one-quarter of the cost. The project brought mechanical design, CAD, embedded electronics, firmware, and hands-on prototyping together in one working system.</p>
+      </div>
+      <div class="case-hero__meta">
+        <div><span>role</span><strong>Independent Designer / Engineer</strong></div>
+        <div><span>project type</span><strong>Personal Engineering Project</strong></div>
+        <div><span>target</span><strong>¼ the cost of commercial VBTs</strong></div>
+        <div><span>status</span><strong>First Working Prototype</strong></div>
+      </div>
+    </section>
+
+    <nav class="case-toc" aria-label="Project navigation">
+      <a href="#objective">objective</a>
+      <a href="#design">system design</a>
+      <a href="#contribution">my contribution</a>
+      <a href="#result">result</a>
+    </nav>
+
+    <section id="objective" class="case-section">
+      <div class="case-section__header">
+        <div class="case-section__index">01 / OBJECTIVE</div>
+        <div><h2>Build useful hardware at a fraction of the cost.</h2><p class="case-section__intro">The goal was not to reproduce a commercial product exactly, but to solve the core measurement problem with accessible components and a custom mechanical system.</p></div>
+      </div>
+      <div class="case-two-col">
+        <div class="case-copy">
+          <p><strong>Objective.</strong> Build a VBT for personal use that matches the functionality of commercially available products at <strong>¼ the price</strong>.</p>
+          <p>Commercial VBT systems measure movement velocity by tracking the motion of a tether or similar mechanical interface. I approached the project as a system-integration problem: convert linear tether motion into a measurable rotary signal, process that signal electronically, and present the calculated velocity to the user in real time.</p>
+        </div>
+        <ul class="case-list">
+          <li>Low-cost component selection</li>
+          <li>Compact mechanical packaging</li>
+          <li>Reliable motion measurement</li>
+          <li>Real-time velocity display</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="design" class="case-section">
+      <div class="case-section__header">
+        <div class="case-section__index">02 / SYSTEM DESIGN</div>
+        <div><h2>Linear motion → rotary measurement.</h2><p class="case-section__intro">The mechanical architecture creates a direct measurement path from tether movement to calculated velocity.</p></div>
+      </div>
+      <div class="case-two-col">
+        <div class="case-copy">
+          <p>The tether winds and unwinds from a custom spool. As the spool rotates, a rotary encoder captures the motion. An <strong>ESP32</strong> processes the encoder signal, converts rotational motion into linear displacement, and calculates velocity for an external display.</p>
+          <p><strong>Motion path:</strong> Tether motion → Spool rotation → Rotary encoder → ESP32 → Velocity calculation → External display.</p>
+          <p>The mechanical design also required consideration of tether routing, spring retraction, packaging, component interfaces, and manufacturability during prototyping.</p>
+        </div>
+        <ul class="case-list">
+          <li>Custom mechanical mechanism</li>
+          <li>Rotary encoder sensing</li>
+          <li>ESP32-based electronics</li>
+          <li>External display integration</li>
+          <li>Calibration and testing</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contribution" class="case-section">
+      <div class="case-section__header">
+        <div class="case-section__index">03 / MY CONTRIBUTION</div>
+        <div><h2>From concept through first prototype.</h2><p class="case-section__intro">I owned the development of the prototype and worked across the mechanical and electrical boundaries needed to make the system function as a whole.</p></div>
+      </div>
+      <div class="case-two-col">
+        <div class="case-copy">
+          <p><strong>Mechanical:</strong> Developed the custom mechanism and CAD needed to package the tether, spool, encoder, and supporting components into a functional prototype.</p>
+          <p><strong>Mechatronics:</strong> Integrated the rotary encoder and ESP32-based electronics with the mechanical system and external display.</p>
+          <p><strong>Firmware & testing:</strong> Developed the measurement logic to read encoder speed and display the calculated velocity, then calibrated and tested the prototype to evaluate its performance.</p>
+        </div>
+        <ul class="case-list">
+          <li>CAD design</li>
+          <li>ESP32 firmware development</li>
+          <li>Electromechanical integration</li>
+          <li>Prototyping</li>
+          <li>Calibration and testing</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="result" class="case-section">
+      <div class="case-section__header">
+        <div class="case-section__index">04 / RESULT</div>
+        <div><h2>A functioning first prototype.</h2><p class="case-section__intro">The project resulted in a working system that demonstrates the complete measurement chain from physical motion to a user-facing result.</p></div>
+      </div>
+      <div class="case-copy">
+        <p>Successfully developed a first prototype integrating <strong>ESP32-based electronics</strong> to measure rotary encoder speed and display the calculated velocity on an external display.</p>
+      </div>
+      <div class="case-callout">
+        <span>Engineering takeaway</span>
+        <p>This project strengthened my ability to move between mechanical design, electronics, firmware, and testing while keeping the overall system objective in focus.</p>
+      </div>
+      <div class="case-next">
+        <p>Detailed measurements, calculations, test data, and design iterations will be documented separately.</p>
+        <a class="case-back" href="index.html#projects">← back to selected work</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container site-footer__inner"><p>© <span id="year"></span> Samuel Smith</p><p>Mechanical engineering portfolio.</p></div></footer>
+  <script src="script.js?v=4"></script>
+</body>
+</html>
