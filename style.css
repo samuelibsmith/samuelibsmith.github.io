@@ -317,7 +317,7 @@ section { padding-block: 116px; border-top: 1px solid var(--border); scroll-marg
 /* PROJECTS */
 .projects__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
 .projects__grid > .project-card--featured { grid-column: 1 / -1; }
-.project-card { display: flex; flex-direction: column; border: 1px solid var(--border); background: rgba(19,26,28,.8); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.project-card { display: flex; flex-direction: column; border: 1px solid var(--border); background: rgba(19,26,28,.8); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; cursor: pointer; }
 .project-card:hover { transform: translateY(-4px); border-color: rgba(60,120,180,.45); box-shadow: var(--shadow); }
 .project-card--featured { grid-column: 1 / -1; display: grid; grid-template-columns: 1.08fr .92fr; }
 .project-card__visual { position: relative; height: 310px; min-height: 310px; overflow: hidden; border-bottom: 1px solid var(--border); }
@@ -353,8 +353,8 @@ section { padding-block: 116px; border-top: 1px solid var(--border); scroll-marg
 .project-card__metrics strong { display: block; margin-top: 4px; color: var(--text); font-size: .82rem; }
 .project-card__tags { display: flex; flex-wrap: wrap; gap: 7px; margin: auto 0 17px; padding: 0; list-style: none; }
 .project-card__tags li { padding: 4px 8px; border: 1px solid rgba(60,120,180,.24); color: var(--secondary); background: rgba(60,120,180,.05); font-family: var(--font-mono); font-size: .61rem; }
-.project-link { display: inline-flex; gap: 8px; align-items: center; color: var(--text); font-family: var(--font-mono); font-size: .73rem; width: fit-content; border-bottom: 1px solid transparent; }
-.project-link:hover { color: var(--accent-bright); border-color: var(--accent); }
+.project-link { display: inline-flex; gap: 8px; align-items: center; color: var(--text); font-family: var(--font-mono); font-size: .73rem; width: fit-content; padding: 9px 12px; border: 1px solid var(--border); background: rgba(60,120,180,.04); transition: color .2s ease, border-color .2s ease, background .2s ease, transform .2s ease; }
+.project-link:hover { color: var(--accent-bright); border-color: var(--accent); background: rgba(60,120,180,.09); transform: translateY(-1px); }
 .project-process { display: grid; grid-template-columns: repeat(5, 1fr); margin-top: 22px; border: 1px solid var(--border); }
 .project-process > div { display: flex; justify-content: space-between; gap: 10px; padding: 12px 13px; border-right: 1px solid var(--border); font-family: var(--font-mono); font-size: .57rem; color: var(--text-muted); }
 .project-process > div:last-child { border-right: none; }

@@ -133,6 +133,23 @@ function initContactForm() {
   });
 }
 
+function initProjectCards() {
+  document.querySelectorAll('[data-project-url]').forEach(card => {
+    const url = card.getAttribute('data-project-url');
+    if (!url) return;
+    card.addEventListener('click', event => {
+      if (event.target.closest('a, button, input, select, textarea')) return;
+      window.location.href = url;
+    });
+    card.addEventListener('keydown', event => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      if (event.target.closest('a, button, input, select, textarea')) return;
+      event.preventDefault();
+      window.location.href = url;
+    });
+  });
+}
+
 function initFooterYear() {
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -173,5 +190,5 @@ function initCarousels() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  initThemeControl(); initTypewriter(); initMobileNav(); initScrollSpy(); initContactForm(); initFooterYear(); initCarousels();
+  initThemeControl(); initTypewriter(); initMobileNav(); initScrollSpy(); initContactForm(); initFooterYear(); initCarousels(); initProjectCards();
 });
