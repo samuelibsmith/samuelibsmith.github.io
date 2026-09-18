@@ -784,3 +784,9 @@ html[data-theme="light"] .carousel__button {
 .vbt-case-study .case-hero__meta { margin-top:0; }
 @media (max-width:980px){ .case-figure--hero-image { min-height:250px; } }
 @media (max-width:760px){ .case-figure--wide { min-height:250px; } }
+
+.case-subsection { margin-top: 56px; padding-top: 38px; border-top: 1px solid var(--border); scroll-margin-top: 90px; }
+.case-subsection__header { margin-bottom: 18px; }
+.case-subsection__header span { display:block; color:var(--accent); font-family:var(--font-mono); font-size:.66rem; letter-spacing:.09em; margin-bottom:8px; }
+.case-subsection h3 { margin:0; font-size:clamp(1.35rem,2vw,1.8rem); letter-spacing:-.025em; }
+.case-subsection__intro { color:var(--text-muted); max-width:68ch; margin:0 0 20px; }
