@@ -118,21 +118,6 @@ function initScrollSpy() {
   sections.forEach(section => observer.observe(section));
 }
 
-function initContactForm() {
-  const form = document.getElementById('contactForm');
-  const status = document.getElementById('formStatus');
-  if (!form || !status) return;
-  form.addEventListener('submit', event => {
-    event.preventDefault();
-    const name = form.name.value.trim(), email = form.email.value.trim(), message = form.message.value.trim();
-    if (!name || !email || !message) { status.textContent = 'Please fill out every field before sending.'; status.classList.add('is-error'); return; }
-    const subject = encodeURIComponent(`Portfolio contact from ${name}`);
-    const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-    window.location.href = `mailto:sibsmith@bu.edu?subject=${subject}&body=${body}`;
-    status.classList.remove('is-error'); status.textContent = 'Opening your email client…'; form.reset();
-  });
-}
-
 function initProjectCards() {
   document.querySelectorAll('[data-project-url]').forEach(card => {
     const url = card.getAttribute('data-project-url');
@@ -190,5 +175,5 @@ function initCarousels() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  initThemeControl(); initTypewriter(); initMobileNav(); initScrollSpy(); initContactForm(); initFooterYear(); initCarousels(); initProjectCards();
+  initThemeControl(); initTypewriter(); initMobileNav(); initScrollSpy(); initFooterYear(); initCarousels(); initProjectCards();
 });

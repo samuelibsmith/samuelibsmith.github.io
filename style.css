@@ -361,22 +361,62 @@ section { padding-block: 116px; border-top: 1px solid var(--border); scroll-marg
 .project-process strong { color: var(--accent); }
 
 /* CONTACT */
-.contact__grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 90px; }
-.contact__intro > p { color: var(--text-muted); max-width: 48ch; font-size: 1.02rem; }
-.contact__direct { margin-top: 42px; padding-top: 20px; border-top: 1px solid var(--border); }
-.contact__direct-link { display: block; color: var(--text); font-family: var(--font-mono); font-size: 1rem; margin-bottom: 13px; }
-.contact__direct-link:hover { color: var(--accent-bright); }
-.contact__socials { display: flex; gap: 18px; }
-.contact__socials a { color: var(--text-muted); font-family: var(--font-mono); font-size: .73rem; }
-.contact__socials a:hover { color: var(--accent); }
-.contact__form { display: flex; flex-direction: column; gap: 16px; padding: 24px; border: 1px solid var(--border); background: rgba(19,26,28,.72); }
-.form-row { display: flex; flex-direction: column; gap: 7px; }
-.form-row label { color: var(--text-muted); font-family: var(--font-mono); font-size: .63rem; letter-spacing: .06em; text-transform: uppercase; }
-.form-row input, .form-row textarea { width: 100%; border: 1px solid var(--border); background: var(--input-bg); color: var(--text); border-radius: var(--radius-sm); padding: 11px 13px; outline: none; resize: vertical; }
-.form-row input:focus, .form-row textarea:focus { border-color: var(--secondary); }
-.contact__form .btn { align-self: flex-start; }
-.form-status { min-height: 1.2em; color: var(--secondary); font-family: var(--font-mono); font-size: .74rem; margin: 0; }
-.form-status.is-error { color: var(--danger); }
+.contact__links {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+}
+
+.contact-link {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 150px;
+  padding: 22px 22px 24px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: rgba(19,26,28,.72);
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.contact-link:hover {
+  background: var(--surface-2);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.contact-link__label {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: .63rem;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.contact-link strong {
+  margin-top: 34px;
+  color: var(--text);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.contact-link__arrow {
+  position: absolute;
+  top: 21px;
+  right: 22px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: .85rem;
+  transition: color .2s ease, transform .2s ease;
+}
+
+.contact-link:hover .contact-link__arrow {
+  color: var(--accent-bright);
+  transform: translate(2px, -2px);
+}
 
 /* FOOTER */
 .site-footer { border-top: 1px solid var(--border); padding-block: 24px; }
@@ -400,6 +440,8 @@ section { padding-block: 116px; border-top: 1px solid var(--border); scroll-marg
 }
 
 @media (max-width: 760px) {
+  .contact__links { grid-template-columns: 1fr; }
+  .contact-link { min-height: 125px; }
   .container { padding-inline: 20px; }
   #hero { padding-top: 48px; }
   section, .resume-cta { padding-block: 82px; }
@@ -429,7 +471,7 @@ section { padding-block: 116px; border-top: 1px solid var(--border); scroll-marg
   .hero__meta > div, .hero__meta > div:nth-child(2), .hero__meta > div:last-child { padding: 11px 0; border-right: none; border-bottom: 1px solid var(--border); margin: 0; }
   .hero__meta > div:last-child { border-bottom: none; }
   .hero__actions { flex-direction: column; align-items: stretch; }
-  .project-card__body, .contact__form { padding: 20px; }
+  .project-card__body { padding: 20px; }
   .project-card__metrics { grid-template-columns: 1fr; }
 }
 
@@ -682,7 +724,7 @@ html[data-theme="light"] .visual__part {
 html[data-theme="light"] .drawing__slot { border-color: rgba(21,32,43,.58); }
 html[data-theme="light"] .skill-group,
 html[data-theme="light"] .project-card,
-html[data-theme="light"] .contact__form {
+html[data-theme="light"] .contact-link {
   background: rgba(255,255,255,.88);
 }
 html[data-theme="light"] .tool-strip span { background: rgba(247,249,251,.9); }
@@ -696,10 +738,6 @@ html[data-theme="light"] .project-card__visual--section {
 html[data-theme="light"] .analysis__bars i {
   border-color: rgba(21,32,43,.18);
   background: linear-gradient(to top, rgba(196,71,71,.20), rgba(22,91,154,.05));
-}
-html[data-theme="light"] .form-row input,
-html[data-theme="light"] .form-row textarea {
-  color-scheme: light;
 }
 html[data-theme="light"] .carousel__button {
   border-color: rgba(21,32,43,.28);
@@ -717,14 +755,12 @@ html[data-theme="light"] .carousel__button {
   html:not([data-theme]) .drawing__slot { border-color: rgba(21,32,43,.58); }
   html:not([data-theme]) .skill-group,
   html:not([data-theme]) .project-card,
-  html:not([data-theme]) .contact__form { background: rgba(255,255,255,.88); }
-  html:not([data-theme]) .tool-strip span,
+  html:not([data-theme]) .contact-link { background: rgba(255,255,255,.88); }
+html:not([data-theme]) .tool-strip span,
   html:not([data-theme]) .btn--ghost { background: rgba(247,249,251,.9); }
   html:not([data-theme]) .project-card__visual--photo { background: radial-gradient(circle at 50% 40%, rgba(22,91,154,.07), transparent 50%), #F4F7F9; }
   html:not([data-theme]) .project-card__visual--section { background: linear-gradient(180deg, rgba(22,91,154,.045), rgba(247,249,251,.96)); }
   html:not([data-theme]) .analysis__bars i { border-color: rgba(21,32,43,.18); background: linear-gradient(to top, rgba(196,71,71,.20), rgba(22,91,154,.05)); }
-  html:not([data-theme]) .form-row input,
-  html:not([data-theme]) .form-row textarea { color-scheme: light; }
   html:not([data-theme]) .carousel__button { border-color: rgba(21,32,43,.28); background: rgba(21,32,43,.72); }
 }
 
