@@ -17,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=11">
+  <link rel="stylesheet" href="style.css?v=12">
 </head>
 <body>
   <header class="site-header"><nav class="nav container">
@@ -52,6 +52,7 @@
       <a href="#overview">overview</a>
       <a href="#project-1">project 1</a>
       <a href="#plotter-exercise">plotter exercise</a>
+      <a href="#sticker-exercise">sticker exercise</a>
     </nav>
 
     <section id="overview" class="case-section">
@@ -151,9 +152,122 @@
         </div>
       </div>
 
+      <div id="sticker-exercise" class="case-subsection">
+        <div class="case-subsection__header">
+          <span>01.2 / SUBSECTION</span>
+          <h3>Sticker Cutting Exercise</h3>
+        </div>
+        <p class="case-subsection__intro">Building on the plotter exercise, this exercise turns the cartesian motion system into a working sticker machine: the same X-Y motion first draws a design in pen, then cuts it out with a knife.</p>
+
+        <div class="case-figure case-figure--labeled">
+          <img src="images/sticker-prototype-labeled.jpg" alt="Sticker cutter front and back views with labeled components: pen and knife set screws, Y-axis, user's choice of pen, double rack and pinion Z-axis, 360 cutting head, sticker paper, X-axis, and the custom pen/knife swapping end effector">
+          <div class="case-figure__caption"><span>FIGURE / 01</span><small>Completed sticker cutter, front and back views with labeled components</small></div>
+        </div>
+
+        <div class="case-copy">
+          <p><strong>Goal:</strong> Build a 2.5-degree-of-freedom cartesian motion machine to draw, and sequentially cut out, custom stickers.</p>
+        </div>
+
+        <div class="case-two-col case-two-col--sticker-details">
+          <div>
+            <p class="case-field-label">Objectives</p>
+            <ul class="case-list">
+              <li>Build a 2.5-degree-of-freedom cartesian motion machine.</li>
+              <li>Draw custom stickers, then sequentially cut them out with the same machine.</li>
+              <li>Produce unique sticker designs from arbitrary images.</li>
+            </ul>
+          </div>
+          <div>
+            <p class="case-field-label">Constraints</p>
+            <ul class="case-list">
+              <li>Small enough to fit in a large bag.</li>
+              <li>A minimum of 2.5 degrees of freedom.</li>
+              <li>Constructed from aluminum 2020 extrusion.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="case-figure-grid case-figure-grid--plotter">
+          <div class="case-figure">
+            <div class="case-figure__inner">
+              <img src="images/sticker-axes-assembly.jpg" alt="Sticker cutter axes under assembly on a workbench, with the vertical supports design open on a tablet">
+              <div class="case-figure__label"><span>IMAGE / 02</span><small>X and Y axes under assembly, motor mount and carriage fitted</small></div>
+            </div>
+          </div>
+          <div class="case-figure">
+            <div class="case-figure__inner">
+              <img src="images/sticker-bed-stage.jpg" alt="Sticker cutter moving bed stage with red plate on aluminum extrusion rails">
+              <div class="case-figure__label"><span>IMAGE / 03</span><small>Moving bed stage, with the sticker board plate fitted</small></div>
+            </div>
+          </div>
+          <div class="case-figure case-figure--span2">
+            <div class="case-figure__inner">
+              <img src="images/sticker-prototype-front.jpg" alt="Completed sticker cutter from the front, pen and knife mounted in the swapping end effector above the cutting mat">
+              <div class="case-figure__label"><span>IMAGE / 04</span><small>Completed machine, pen and knife mounted in the swapping end effector</small></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-two-col case-two-col--sticker-details">
+          <div>
+            <p class="case-field-label">Contributions</p>
+            <ul class="case-list">
+              <li>Led a team of 4 to design and construct the linear components.</li>
+              <li>Designed custom mounts in Onshape for the idler pulley and NEMA-17 stepper motors to control the X and Y linear stages.</li>
+              <li>Leveraged AI coding tools to build a custom Python script using the OpenCV library to convert any image into a G-code sequence to first draw and then cut out the sticker with a specified offset.</li>
+              <li>Ran assembly, prototyping, and troubleshooting sessions to achieve a working prototype.</li>
+            </ul>
+          </div>
+          <div>
+            <p class="case-field-label">Technical Details and Skills</p>
+            <ul class="case-list">
+              <li>Onshape to build CAD parts and assemblies.</li>
+              <li>Stepper motor control using Repetier Host.</li>
+              <li>Rapid prototyping and integration of 2020 extrusion with custom 3D-printed parts.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="case-figure-grid case-figure-grid--plotter">
+          <div class="case-figure">
+            <div class="case-figure__inner">
+              <img src="images/sticker-preview-robot.svg" alt="G-code toolpath preview of the robot arm sticker design">
+              <div class="case-figure__label"><span>IMAGE / 05</span><small>Toolpath preview generated from the robot arm design</small></div>
+            </div>
+          </div>
+          <div class="case-figure">
+            <div class="case-figure__inner">
+              <img src="images/sticker-preview-terrier.svg" alt="G-code toolpath preview of the terrier sticker design">
+              <div class="case-figure__label"><span>IMAGE / 06</span><small>Toolpath preview generated from the terrier design</small></div>
+            </div>
+          </div>
+          <div class="case-figure">
+            <div class="case-figure__inner">
+              <video controls playsinline preload="none" poster="images/sticker-draw-robot-poster.jpg" aria-label="Video of the pen drawing the robot arm sticker design">
+                <source src="images/sticker-draw-robot.mp4" type="video/mp4">
+              </video>
+              <div class="case-figure__label"><span>VIDEO / 07</span><small>Pen drawing the robot arm design, with hatched fill</small></div>
+            </div>
+          </div>
+          <div class="case-figure">
+            <div class="case-figure__inner">
+              <video controls playsinline preload="none" poster="images/sticker-draw-cut-terrier-poster.jpg" aria-label="Video of the terrier sticker being drawn in pen, then cut out with the knife">
+                <source src="images/sticker-draw-cut-terrier.mp4" type="video/mp4">
+              </video>
+              <div class="case-figure__label"><span>VIDEO / 08</span><small>Terrier sticker drawn in pen, then cut out with the knife</small></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-callout">
+          <span>Results</span>
+          <p>Successfully created six unique sticker designs. The prototype was built to the design constraints, small enough to fit in a bag, with 2.5 degrees of freedom.</p>
+        </div>
+      </div>
+
       <div class="case-callout case-callout--ongoing">
         <span>Course status</span>
-        <p>Course in progress — last updated September 2026. Further subsections will be developed throughout the semester.</p>
+        <p>Course in progress — last updated October 2026. Further subsections will be developed throughout the semester.</p>
       </div>
     </section>
   </main>
